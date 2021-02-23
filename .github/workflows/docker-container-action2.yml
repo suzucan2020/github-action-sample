@@ -22,16 +22,14 @@ jobs:
     # if use this repository
     ##################################
     - uses: actions/checkout@v2.0.0
-    - name: cd goto action directory
-      run: |
-        cd .github/actions/hello-world
     - name: change entrypoint.sh permission
       run: |
+        cd .github/actions/hello-world
         ls -al
         chmod +x entrypoint.sh
         ls -al
     - id: hello
-      uses: ./
+      uses: ./.github/actions/hello-world/
       with:
         who-to-greet: 'suzucan2020'
     # Use the output from the `hello` step
