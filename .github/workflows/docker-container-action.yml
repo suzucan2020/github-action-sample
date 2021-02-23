@@ -3,11 +3,11 @@ on: [push]
 jobs:
   hello-world-job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    #name: A job to say hello
     steps:
     - name: Hello world action step
       id: hello
-      uses: actions/hello-world-docker-action@v1
+      uses: actions/github-action-sample@v1 # change repository name
       with:
         who-to-greet: 'suzucan2020'
     # Use the output from the `hello` step
