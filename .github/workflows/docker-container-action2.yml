@@ -28,7 +28,7 @@ jobs:
         chmod +x entrypoint.sh
         ls -al
     - id: hello
-      uses: .github/actions/hello-world/ # important
+      uses: ./.github/actions/hello-world/ # important
       with:
         who-to-greet: 'suzucan2020'
     # Use the output from the `hello` step
