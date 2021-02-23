@@ -18,6 +18,11 @@ jobs:
     # if use this repository
     ##################################
     - uses: actions/checkout@v2.0.0
+    - name: change entrypoint.sh permission
+      run: |
+        ls -al
+        chmod +x entrypoint.sh
+        ls -al
     - id: hello
       uses: ./ # important
       with:
