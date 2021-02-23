@@ -6,7 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          mkdir dataecho "Hello" > data/hello.txt
+          mkdir data
+          echo "Hello" > data/hello.txt
       - uses: actions/upload-artifact@v2
         with:
           name: data
