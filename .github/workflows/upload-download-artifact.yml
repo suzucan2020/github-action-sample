@@ -3,10 +3,6 @@ on: push
 
 jobs:
   upload:
-    runs-on
-
-jobs:
-  upload:
     runs-on: ubuntu-latest
     steps:
       - run: |
