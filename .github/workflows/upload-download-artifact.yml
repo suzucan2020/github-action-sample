@@ -1,5 +1,9 @@
 name: upload-download-artifact
-on: push
+#on: push
+on:
+  push:
+    branches-ignore:
+      - '**'
 
 jobs:
   upload:
