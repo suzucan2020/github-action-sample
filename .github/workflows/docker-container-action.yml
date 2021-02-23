@@ -5,9 +5,21 @@ jobs:
     runs-on: ubuntu-latest
     #name: A job to say hello
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: actions/github-action-sample@v1 # change repository name
+    ##################################
+    # if use action repositry
+    ##################################
+    #- name: Hello world action step
+    #  id: hello
+    #  uses: actions/hello-world-docker-action@v1 # action repository name
+    #  with:
+    #    who-to-greet: 'suzucan2020'
+    ####################################
+    ##################################
+    # if use this repository
+    ##################################
+    - uses: actions/checkout@v2.0.0
+    - id: hello
+      uses: ./ # important
       with:
         who-to-greet: 'suzucan2020'
     # Use the output from the `hello` step
