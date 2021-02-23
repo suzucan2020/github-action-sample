@@ -1,0 +1,15 @@
+name: checkout
+
+on: [push]
+#on:
+#  push:
+#    branches-ignore:
+#      - '**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: ls -al
+      run: | 
+        ls -al
