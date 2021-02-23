@@ -1,0 +1,36 @@
+on: [push]
+#on:
+#  push:
+#    branches-ignore:
+#      - '**'
+
+jobs:
+  hello-world-job:
+    runs-on: ubuntu-latest
+    #name: A job to say hello
+    steps:
+    ##################################
+    # if use action repositry
+    ##################################
+    #- name: Hello world action step
+    #  id: hello
+    #  uses: actions/hello-world-docker-action@v1 # action repository name
+    #  with:
+    #    who-to-greet: 'suzucan2020'
+    ####################################
+    ##################################
+    # if use this repository
+    ##################################
+    - uses: actions/checkout@v2.0.0
+    - name: change entrypoint.sh permission
+      run: |
+        ls -al
+        chmod +x entrypoint.sh
+        ls -al
+    - id: hello
+      uses: .github/actions/hello-world/ # important
+      with:
+        who-to-greet: 'suzucan2020'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
