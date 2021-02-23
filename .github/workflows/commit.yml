@@ -1,10 +1,10 @@
 name: commit
 
-on: [push]
-#on:
-#  push:
-#    branches-ignore:
-#      - '**'
+#on: [push]
+on:
+  push:
+    branches-ignore:
+      - '**'
 jobs:
   commit-job:
     runs-on: ubuntu-latest
