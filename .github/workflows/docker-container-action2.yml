@@ -1,8 +1,8 @@
-on: [push]
-#on:
-#  push:
-#    branches-ignore:
-#      - '**'
+#on: [push]
+on:
+  push:
+    branches-ignore:
+      - '**'
 
 jobs:
   hello-world-job:
