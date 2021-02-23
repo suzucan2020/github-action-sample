@@ -6,20 +6,23 @@ on: [push]
 #    branches-ignore:
 #      - '**'
 jobs:
-  build:
+  commit-job:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    
     - name: create file
       run: |
         mkdir -p made_by_commit_yml
         date > made_by_commit_yml/date.txt
+    
     - name: Commit files
       run: |
         git config --local user.email "suzucan2020@users.noreply.github.com"
         git config --local user.name "suzucan2020"
         git add .
         git commit -m "made by commit yml" -a
+    
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
